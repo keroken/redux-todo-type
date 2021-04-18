@@ -1,11 +1,17 @@
 import React from 'react';
 
-export const TodoItem = () => {
+type itemProps = {
+  id: Date;
+  title: string;
+  completed: boolean;
+};
+export const TodoItem = ({id, title, completed}: itemProps) => {
   return (
     <>
-      <li>todo 1</li>
-      <li>todo 2</li>
-      <li>todo 3</li>
+      <li>
+        <input type='checkbox' checked={completed}></input>
+        {title}
+      </li>
     </>
   );
 };
